@@ -33,6 +33,7 @@ public class TodoController {
 
     @PostMapping
     public Todo createTodo(@RequestBody Todo todo) {
+    	log.info("Creating todo: {}", todo);
         Todo savedTodo = repository.save(todo);
         
         /**
@@ -47,6 +48,7 @@ public class TodoController {
 
     @DeleteMapping
     public void deleteAllTodos() {
+    	log.info("Deleting all todos");
         repository.deleteAll();
     }
 
